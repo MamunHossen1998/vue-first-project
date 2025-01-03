@@ -1,13 +1,14 @@
 <template>
-  <!-- <div id="app"> -->
+  <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h1>{{ title }}</h1> 
-
     <navbar></navbar>
     <description></description>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias tenetur ipsam, et qui ullam tempore dignissimos ab odit quis adipisci iure architecto fugiat unde iusto aliquid impedit sapiente repudiandae. Facere.</p>
-  <!-- </div> -->
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias tenetur ipsam, et qui ullam tempore dignissimos ab odit quis adipisci iure architecto fugiat unde iusto aliquid impedit sapiente repudiandae. Facere.</p>
+    <allFriend :friends="friends"></allFriend>
+    <OnlineFriend :friends="friends"></OnlineFriend>
+  </div>
 
 </template>
 
@@ -15,17 +16,28 @@
 // import HelloWorld from './components/HelloWorld.vue' 
 import navbar from './components/Navbar.vue'
 import description from './components/Description.vue'
+import allFriend from './components/AllFriends.vue'
+import OnlineFriend from './components/OnlineFriend.vue'
 
 export default {
   name: 'App',
   components: { 
     // HelloWorld,
     navbar,
-    description
+    description,
+    allFriend,
+    OnlineFriend
   },
   data(){
     return {
-      title:"Bangladesh"
+      title:"Bangladesh",
+      friends:[
+          {name:'A',online:true},
+          {name:'B',online:false},
+          {name:'C',online:true},
+          {name:'D',online:false},
+          {name:'E',online:true},
+        ]
     }
   }
 }
