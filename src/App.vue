@@ -7,7 +7,7 @@
     <description></description>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias tenetur ipsam, et qui ullam tempore dignissimos ab odit quis adipisci iure architecto fugiat unde iusto aliquid impedit sapiente repudiandae. Facere.</p>
     <allFriend :friends="friends"></allFriend>
-    <OnlineFriend :friends="friends"></OnlineFriend>
+    <OnlineFriend :friends="friends" @delete="deleteFriend"></OnlineFriend>
   </div>
 
 </template>
@@ -38,6 +38,14 @@ export default {
           {name:'D',online:false},
           {name:'E',online:true},
         ]
+    }
+  },
+  methods:{
+    deleteFriend(payload){
+      console.log(payload);
+      this.friends = this.friends.filter(friend =>{
+        return friend.name != payload.name;
+      })
     }
   }
 }
