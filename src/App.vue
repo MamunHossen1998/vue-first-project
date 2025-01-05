@@ -9,6 +9,7 @@
     <allFriend :friends="friends"></allFriend>
     <OnlineFriend :friends="friends" @delete="deleteFriend"></OnlineFriend>
     <Hook></Hook>
+    <AxiosTest></AxiosTest>
   </div>
 
 </template>
@@ -20,6 +21,7 @@ import description from './components/Description.vue'
 import allFriend from './components/AllFriends.vue'
 import OnlineFriend from './components/OnlineFriend.vue'
 import Hook from './components/Hook.vue'
+import AxiosTest from './components/AxiosTest.vue'
 
 export default {
   name: 'App',
@@ -30,6 +32,7 @@ export default {
     allFriend,
     OnlineFriend,
     Hook,
+    AxiosTest
   },
   data(){
     return {
