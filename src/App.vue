@@ -8,6 +8,7 @@
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias tenetur ipsam, et qui ullam tempore dignissimos ab odit quis adipisci iure architecto fugiat unde iusto aliquid impedit sapiente repudiandae. Facere.</p>
     <allFriend :friends="friends"></allFriend>
     <OnlineFriend :friends="friends" @delete="deleteFriend"></OnlineFriend>
+    <Hook></Hook>
   </div>
 
 </template>
@@ -18,6 +19,7 @@ import navbar from './components/Navbar.vue'
 import description from './components/Description.vue'
 import allFriend from './components/AllFriends.vue'
 import OnlineFriend from './components/OnlineFriend.vue'
+import Hook from './components/Hook.vue'
 
 export default {
   name: 'App',
@@ -26,7 +28,8 @@ export default {
     navbar,
     description,
     allFriend,
-    OnlineFriend
+    OnlineFriend,
+    Hook,
   },
   data(){
     return {
@@ -44,7 +47,7 @@ export default {
     deleteFriend(payload){
       console.log(payload);
       this.friends = this.friends.filter(friend =>{
-        return friend.name != payload.name;
+        return  friend.name != payload.name;
       })
     }
   }
