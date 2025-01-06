@@ -8,7 +8,7 @@ app.config.globalProperties.$filters = {
      if(!val || typeof(val) != 'string'){
         return '';
     }else{
-        val = val.slice(0,4);
+        val = val.slice(0,10);
         return val;
     }
   }
