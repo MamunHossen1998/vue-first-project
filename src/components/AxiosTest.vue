@@ -1,7 +1,9 @@
 <template>
   <div id="AxiosTest">
     <h3>Axios Test In Vue</h3>
-    <h5 v-for="(post,index) in posts" :key="index">{{post.title}}</h5>
+    <div v-for="(post,index) in posts" :key="index">
+        <h2>{{  $filters.test(post.title)  }}</h2>
+    </div><hr>
   </div>
 </template>
 <script>
